@@ -53,13 +53,13 @@ export function ProjectSidebar({ isOpen, onClose }: ProjectSidebarProps) {
             <TabsList className="w-full rounded-none border-b border-border bg-transparent p-0">
               <TabsTrigger
                 value="my-projects"
-                className="rounded-none border-b-2 border-transparent data-[state=active]:border-accent-primary"
+                className="rounded-none border-b-2 border-transparent data-active:border-accent-primary"
               >
                 My Projects
               </TabsTrigger>
               <TabsTrigger
                 value="shared"
-                className="rounded-none border-b-2 border-transparent data-[state=active]:border-accent-primary"
+                className="rounded-none border-b-2 border-transparent data-active:border-accent-primary"
               >
                 Shared
               </TabsTrigger>
