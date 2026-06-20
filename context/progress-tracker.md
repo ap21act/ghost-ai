@@ -4,11 +4,11 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Current Phase
 
-- Design System Implementation
+- Editor Chrome Components Implementation
 
 ## Current Goal
 
-- Install shadcn/ui, add required components, create cn() helper, ensure dark theme consistency
+- Build editor navbar and project sidebar with proper styling and interactions
 
 ## Completed
 
@@ -21,14 +21,47 @@ Update this file whenever the current phase, active feature, or implementation s
   - Confirmed dark theme compatibility (all components use dark mode variants)
   - Verified no default light styling appears
 
+- Editor Chrome Components (02-editor.md feature spec)
+  - Created EditorNavbar with fixed positioning, sidebar toggle, and design tokens
+  - Created ProjectSidebar with tabs, overlay, smooth animations, and empty states
+  - Created test page at app/editor/page.tsx
+  - All components compile without TypeScript errors
+  - No lint errors
+  - All design tokens (bg-base, text-primary, accent-primary) applied correctly
+  - Components verified rendering in browser
+
 ## In Progress
 
 - None yet.
 
 ## Next Up
 
-- Create component composition examples
-- Build initial UI layouts
+- Dialog pattern implementation
+- Additional editor pages (chapters)
+
+## Recent Implementations
+
+- Editor Navbar (components/editor/editor-navbar.tsx)
+  - Fixed-height top navbar (h-16) with fixed positioning
+  - Left section with sidebar toggle button (PanelLeftOpen/PanelLeftClose icons based on state)
+  - Center and right sections (right empty for now)
+  - Dark background with subtle bottom border using design tokens
+  - Accepts sidebarOpen and onToggleSidebar props
+
+- Project Sidebar (components/editor/project-sidebar.tsx)
+  - Floats above canvas, slides in from left with smooth transition
+  - Positioned fixed with margin-top to account for navbar
+  - Header with Projects title and close button (X icon)
+  - Tabs component: My Projects, Shared (both with empty placeholder state)
+  - Full-width New Project button at bottom with Plus icon
+  - Overlay backdrop with semi-transparent black
+  - Accepts isOpen and onClose props
+
+- Editor Layout (app/editor/layout.tsx)
+  - Created dedicated layout for editor pages
+  - Manages sidebar open/closed state
+  - Provides EditorNavbar and ProjectSidebar to all editor child pages
+  - All editor routes automatically wrapped with chrome components
 
 ## Open Questions
 
