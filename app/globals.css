@@ -53,3 +53,14 @@
     @apply border-border-default;
   }
 }
+
+/* Clerk component dark theme customization */
+.cl-root {
+  color-scheme: dark;
+  --clerk-colors-background-primary: var(--bg-base);
+  --clerk-colors-background-secondary: var(--bg-surface);
+  --clerk-colors-text-primary: var(--text-primary);
+  --clerk-colors-text-secondary: var(--text-secondary);
+  --clerk-colors-primary: var(--accent-primary);
+  --clerk-colors-accent-primary: var(--accent-primary);
+}

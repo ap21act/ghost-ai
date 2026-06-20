@@ -4,11 +4,11 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Current Phase
 
-- Editor Chrome Components Implementation
+- Authentication & Route Protection Completed
 
 ## Current Goal
 
-- Build editor navbar and project sidebar with proper styling and interactions
+- Ready for next feature phase (Dialog implementation, Additional editor pages, User dashboard)
 
 ## Completed
 
@@ -38,6 +38,7 @@ Update this file whenever the current phase, active feature, or implementation s
 
 - Dialog pattern implementation
 - Additional editor pages (chapters)
+- User dashboard with project management
 
 ## Recent Implementations
 
@@ -62,6 +63,18 @@ Update this file whenever the current phase, active feature, or implementation s
   - Manages sidebar open/closed state
   - Provides EditorNavbar and ProjectSidebar to all editor child pages
   - All editor routes automatically wrapped with chrome components
+
+- Authentication Implementation (03-auth.md feature spec)
+  - Installed @clerk/ui
+  - Wrapped root layout with ClerkProvider using Clerk's dark theme
+  - Integrated CSS variables (--bg-base, --accent-primary, --text-primary, etc.) into Clerk appearance config
+  - Created sign-in page at app/(auth)/sign-in/[[...sign-in]]/page.tsx with two-panel layout
+  - Created sign-up page at app/(auth)/sign-up/[[...sign-up]]/page.tsx with two-panel layout
+  - Layout responsive: two-panel on desktop, form-only on mobile
+  - Created proxy.ts at project root for route protection
+  - Configured public routes (sign-in, sign-up) and protected all other routes by default
+  - Updated root page (/) to redirect authenticated users to /editor and unauthenticated to /sign-in
+  - Added UserButton to EditorNavbar right section for profile settings and logout
 
 ## Open Questions
 
